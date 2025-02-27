@@ -1,0 +1,10 @@
+nsp256:
+  library_path: 'C:\Program Files\Blackrock Microsystems\Cerebus Central Suite 7.6.1'
+  instance: 0
+  channels: 256
+
+nsp128:
+  library_path: 'C:\Program Files (x86)\Blackrock Microsystems\NeuroPort Windows Suite'
+  instance: 2
+  channels: 128
+   
