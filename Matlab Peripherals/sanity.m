@@ -1,22 +1,29 @@
-cbmex('open', 2, 'inst-addr', '192.168.137.1', 'inst-port', 51001);
-channel_count = 256;
+
+
+sdk_path = 'C:\Program Files\Blackrock Microsystems\Cerebus Central Suite';
+addpath(sdk_path)
+cbmex('open');
+channel_count = 280;
 sample_rate_setting = 5;
 filter_setting = 1; 
 trial_length=5;
 current_time=tic;
 
+%tic
+%for i = 1:3
+%    [a,b] = MEXBUILDER('2', cont, event_data);
+%end 
+%toc 
 cbmex('trialconfig',1)
 
-for i = 1:channel_count
-    cbmex('config', i, 'smpgroup', sample_rate_setting, 'smpfilter', 2)
-end 
+
 
 % Initialize time tracking
 current_time = tic;
 
 % Initialize a variable to hold all the 'cont' values
 cont_values = [];
-
+cbmex('system', 'reset')
 % Start the while loop
 while(trial_length > toc(current_time))
     pause(0.5);  % Wait for 0.5 seconds to prevent overloading the CPU
