@@ -1,0 +1,3 @@
+[submodule "CerebusCompressor"]
+	path = CerebusCompressor
+	url = https://github.com/SamJBoyer/CerebusCompressor.git
